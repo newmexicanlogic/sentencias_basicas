@@ -1,0 +1,54 @@
+
+Create database dbcontacto 
+use dbcontacto 
+create table contacto(
+IdContacto int identity, 
+Nombres varchar(100), 
+Apellidos varchar(100), 
+Telefono varchar(100), 
+Correo varchar(100) 
+)
+
+
+insert into contacto(Nombres, Apellidos, Telefono, Correo) values 
+('Jose', 'Perez', '665959595', 'jose@gmail.com'), 
+('Pablo', 'Perez', '665959595', 'Pablo@gmail.com'), 
+('Marcos', 'Perez', '665959595', 'Marcos@gmail.com'), 
+('Denis', 'Perez', '665959595', 'Denis@gmail.com')
+
+Select * from contacto 
+
+create procedure sp_registrar(
+@Nombres varchar(10), 
+@Apellidos varchar(100), 
+@Telefono varchar(100), 
+@Correo varchar(100)
+)
+
+as begin 
+ insert into contacto(Nombres, Apellidos, Telfono, Correo) values (@Nombre, @Apellidos, @Telefono, @Correo)
+end 
+
+
+create procedure sp_editar(
+@IdContacto int, 
+@Nombres varchar(100),
+@Apellidos varchar(100), 
+@Telefono varchar(100), 
+@Correo varchar(100)
+)
+as
+begin 
+update Contacto set Nombres = @Nombres, Apellidos = @Apellidos, Telefono = @Telefono, Correo = @Correo where 
+IdContacto = @IdContacto 
+end 
+
+
+create procedure sp_eliminar(
+@IdContacto int 
+)
+as 
+begin 
+delete from Contacto where IdContacto = @IdContacto 
+end 
+
