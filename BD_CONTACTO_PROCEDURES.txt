@@ -1,4 +1,4 @@
-
+Cambios en la cabecera 
 Create database dbcontacto 
 use dbcontacto 
 create table contacto(
