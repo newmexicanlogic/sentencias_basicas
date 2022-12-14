@@ -1,4 +1,4 @@
-
+Bienvenido a la version 2.0 
 Create database dbcontacto 
 use dbcontacto 
 create table contacto(
